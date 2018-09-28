@@ -1,5 +1,5 @@
-import xlrdbook = xlrd.open_workbook("EPON2.xlsx")
-sheetcount = book.nsheets
+import xlrd
+book = xlrd.open_workbook("EPON2.xlsx")
 print("done")
 
 f = open("demofile2.json", "w")
