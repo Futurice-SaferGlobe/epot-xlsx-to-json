@@ -3,7 +3,7 @@ sheetcount = book.nsheets
 print("done")
 
 f = open("demofile2.json", "w")
-sheetcount = 1
+sheetcount = book.nsheets-1
 for I in range(sheetcount):
     currsheet = book.sheet_by_index(I)
     f.write("{")
@@ -49,4 +49,6 @@ for I in range(sheetcount):
     f.write("},")
     f.write("\n")
 f.close()
+
+
 
