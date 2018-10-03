@@ -67,7 +67,6 @@ def main():
         if I == book.nsheets-3: 
             f.write("        }")
         f.write("\n")
-
     f.write("        ]")
     f.write("\n")
     f.write("    }")
