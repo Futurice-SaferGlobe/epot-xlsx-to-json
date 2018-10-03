@@ -16,22 +16,17 @@ def main():
     f.write("    \"data\": [" + "\n")
     for I in range(sheetcount):
         currsheet = book.sheet_by_index(I)
-        f.write("        {")
-        f.write("\n")
-        f.write("        \"index\""+":" +" "+  str(I+1) + ",")
-        f.write("\n")
+        f.write("        {"+"\n")
+        f.write("        \"index\""+":" +" "+  str(I+1) + ","+"\n")
         #string = string.replace("\n",' ')
-        f.write("        \"title\"" + ":" + " " + " \"" + str(currsheet.cell(0,1).value) + "\"" + ",")
-        f.write("\n")
+        f.write("        \"title\"" + ":" + " " + " \"" + str(currsheet.cell(0,1).value) + "\"" + ","+"\n")
         string = "        \"content\"" + ": " + " \""+str(currsheet.cell(1,1).value) + "\" " + ","
         string = string.replace("\n",' ')
         f.write(string)
         f.write("\n")
         labels = list
-        f.write("        \"labels\"" + ": " + "["+ "\"" +str(currsheet.cell(1,2).value) + "\""+ "]"+ ",")
-        f.write("\n")
-        f.write("        \"subheaders\"" + ": " + "[")
-        f.write("\n")
+        f.write("        \"labels\"" + ": " + "["+ "\"" +str(currsheet.cell(1,2).value) + "\""+ "]"+ ","+"\n")
+        f.write("        \"subheaders\"" + ": " + "["+"\n")
         rows = currsheet.nrows
         cols = currsheet.ncols
         #print(rows)
@@ -39,12 +34,8 @@ def main():
         counter = 0
         for i in range(1,rows-1,2):
             counter = counter+1
-            f.write("            {")
-            f.write("\n")
-            f.write("            \"index\""+":" +" "+  str(counter) + ",")
-            f.write("\n")
-            f.write("            \"title\"" + ":" + " " + " \"" + str(currsheet.cell(i+1,1).value) + "\"" + ",")
-            f.write("\n")
+            f.write("            {"+"\n")
+            f.write("            \"index\""+":" +" "+  str(counter) + ","+"\n")
             string1 = "            \"content\":" + " \"" + str(currsheet.cell(i+2,1).value) + "\"" + ","
             string1 = string1.replace("\n",' ')
             f.write(string1)
@@ -60,17 +51,14 @@ def main():
                 f.write("            },")
             f.write("\n")
         counter = 0
-        f.write("        ]")
-        f.write("\n")
+        f.write("        ]"+"\n")
         if I != book.nsheets-3:
             f.write("        },")
         if I == book.nsheets-3: 
             f.write("        }")
         f.write("\n")
-    f.write("        ]")
-    f.write("\n")
-    f.write("    }")
-    f.write("\n")
+    f.write("        ]"+"\n")
+    f.write("    }"+"\n")
     f.write("]")
     f.close()
 
